@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-01-19T14:39:51Z" product-name="amazingcomments">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_amazingcomments_domain_model_comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_comment.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_comment.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_comment.author">
+				<source>Author</source>
+			</trans-unit>
+
+			<trans-unit id="tx_amazingcomments_domain_model_discussion">
+				<source>Discussion</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_discussion.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_discussion.comments">
+				<source>Comments</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_discussion.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_amazingcomments_emailnotification">
+				<source>Notification receiver (comma separated list of email addresses)</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

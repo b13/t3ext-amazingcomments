@@ -1,0 +1,14 @@
+plugin.tx_amazingcomments {
+	view {
+		# cat=plugin.tx_amazingcomments/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:amazingcomments/Resources/Private/Templates/
+		# cat=plugin.tx_amazingcomments/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:amazingcomments/Resources/Private/Partials/
+		# cat=plugin.tx_amazingcomments/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:amazingcomments/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_amazingcomments//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

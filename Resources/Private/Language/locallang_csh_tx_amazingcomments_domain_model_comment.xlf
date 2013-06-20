@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-01-19T14:39:51Z" product-name="amazingcomments">
+		<header/>
+		<body>
+
+			<trans-unit id="headline.description">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="content.description">
+				<source>Main Content / Bodytext</source>
+			</trans-unit>
+			<trans-unit id="author.description">
+				<source>Author</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

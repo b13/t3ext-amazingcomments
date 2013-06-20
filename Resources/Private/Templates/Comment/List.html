@@ -1,0 +1,52 @@
+<div class="discussionWrap">
+	<div class="discussionList">
+		<h2>Comments on this article</h2>
+		<f:if condition="{f:count(subject: discussion.comments)} == 0">
+			<p>There are no comments on this article yet.</p>
+		</f:if>
+		
+		<f:for each="{discussion.comments}" as="comment" iteration="i">
+			<div class="commentItem {f:if(condition: i.isEven, then: 'even', else: 'odd')}">
+				<div class="commentHeader">
+					<div class="imgWrap">
+						<f:image src="{comment.author.image}" alt="{comment.author.publicName}" width="50c" height="60c" />
+					</div>
+					<div class="userInfoWrap">
+						<p><b>{comment.author.publicName}</b>{f:if(condition: '{comment.author.finalJobtitle}', then: '<br />{comment.author.finalJobtitle}')} <br />{comment.author.country}</p>
+					</div>
+					<div class="commentInfoWrap">
+						<p><f:format.date format="Y-m-d h:i a">{comment.crdate}</f:format.date></p>
+						<p class="commentCount"># {i.cycle}</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="commentBody">
+					<f:if condition="{comment.headline}">
+						<p class="commentHeadline">{comment.headline}</p>
+					</f:if>
+					<f:format.html>{comment.content}</f:format.html>
+				</div>
+			</div>
+		</f:for>
+		
+	
+		<div class="commentForm" id="comments-ComentsForm">
+			<div class="commentFormInner">
+				<h3>Add a comment</h3>
+				<f:form action="create" object="{newComment}" objectName="comment" method="post" additionalParams="{tab: 'layerTab-discussion'}">
+					<div class="control-group">
+						<f:form.textfield property="headline" placeholder="Headline of reply (optional)" class="span3" />	
+					</div>
+					<div class="clearfix"></div>
+					<div class="control-group control-group-single">
+						<f:form.textarea property="content" cols="30" rows="10" class="span5" additionalAttributes="{required: required}" />
+					</div>
+					<div class="form-actions">
+						<f:form.submit value="Submit" class="btn btn-danger btn-small" />
+					</div>
+				</f:form>
+			</div>
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div class="discussionWrap">
+	<div class="discussionLatest">
+		<div class="discussionLatestInner">
+			<h3>Latest Comments</h3>
+			<f:for each="{latestComments}" as="comment" iteration="i">
+				<div class="commentItem {f:if(condition: i.isEven, then: 'even', else: 'odd')}">
+					<div class="imgWrap">
+						<f:image src="{comment.author.image}" alt="{comment.author.publicName}" width="50c" height="60c" />
+					</div>
+					<div class="textWrap">
+						<p class="userInfo">From: <b>{comment.author.publicName}</b> &#124; <f:format.date format="Y-m-d h:i a">{comment.crdate}</f:format.date></p>
+						<f:format.raw><f:format.crop maxCharacters="150" append="...">{comment.content}</f:format.crop></f:format.raw>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<f:if condition="{i.isLast}">
+					<div class="commentItem {f:if(condition: i.isEven, then: 'odd', else: 'even')}">
+						<div class="imgWrap">
+							<f:image src="{currentUser.image}" alt="{currentUser.image}" width="50c" height="60c" />
+						</div>
+						<div class="textWrap">
+							<a href="#layerTab-discussion" class="btn btn-small" data-toggle="tab">Add a comment</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</f:if>
+			</f:for>
+			<f:if condition="{f:count(subject: latestComments)} == 0">
+				<div class="commentItem even">
+					<div class="imgWrap">
+						<f:image src="{currentUser.image}" alt="{currentUser.publicName}" width="50c" height="60c" />
+					</div>
+					<div class="textWrap">
+						<a href="#layerTab-discussion" class="btn btn-small" data-toggle="tab">Add a comment</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</f:if>
+
+
+		</div>
+	</div>
+</div>

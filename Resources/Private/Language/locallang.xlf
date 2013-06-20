@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-01-19T14:39:51Z" product-name="amazingcomments">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_amazingcomments_domain_model_comment">
+				<source>A simple post or comment</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_comment.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_comment.content">
+				<source>Main Content / Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_comment.author">
+				<source>Author</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_amazingcomments_domain_model_discussion">
+				<source>discussion</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_discussion.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_discussion.comments">
+				<source>comments</source>
+			</trans-unit>
+			<trans-unit id="tx_amazingcomments_domain_model_discussion.author">
+				<source>Author</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

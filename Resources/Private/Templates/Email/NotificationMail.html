@@ -1,0 +1,21 @@
+<p>Dear
+<f:if condition="{receiver.firstName}">
+<f:then>
+	{receiver.firstName} {receiver.lastName}
+</f:then>
+<f:else>
+	The Analytical Scientist Team
+</f:else>
+</f:if>,</p>
+<br />
+ 
+<p>Good news! A new comment as been posted on {articleTitle}.</p>
+ 
+<p>You can view all comments and join the discussion by clicking <f:link.action action="list" absolute="true" extensionName="amazingcomments" controller="Comment" pluginName="ListComments" pageUid="{pageId}" additionalParams="{tab: 'layerTab-discussion'}">here</f:link.action>.</p>
+<br />
+ 
+<p>Thank you for contributing to The Analytical Scientist community.</p>
+ 
+<p>Rich Whitworth</p>
+ 
+<p>Editor</p>

@@ -1,0 +1,49 @@
+plugin.tx_amazingcomments {
+	view {
+		templateRootPath = {$plugin.tx_amazingcomments.view.templateRootPath}
+		partialRootPath = {$plugin.tx_amazingcomments.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_amazingcomments.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_amazingcomments.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+	settings {
+		#notificationmail subject
+		notificationMailSubject = New comment on
+		
+		#notificationmai Sendername
+		notificationMailSenderName = The Analytical Scientist
+		
+		#notificationmai Senderemail
+		notificationMailSenderEmail = info@theanalyticalscientist.com
+	}
+}
+
+plugin.tx_amazingcomments._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-amazingcomments table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-amazingcomments table th {
+		font-weight:bold;
+	}
+
+	.tx-amazingcomments table td {
+		vertical-align:top;
+	}
+)

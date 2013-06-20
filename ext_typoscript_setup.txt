@@ -1,0 +1,20 @@
+
+##################################
+# Page Object for an API Request #
+##################################
+
+
+plugin.tx_amazingcomments.persistence.classes {
+	TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
+		mapping.tableName = fe_users
+		storagePid = 39
+		recordType >
+	}
+}
+
+config.tx_extbase.persistence.classes.TYPO3\CMS\Extbase\Domain\Model\FrontendUser.recordType >
+
+# set TXP User for everybody
+config.tx_extbase.objects.TYPO3\CMS\Extbase\Domain\Model\FrontendUser.className = Tx_Txp_Domain_Model_User
+
+
