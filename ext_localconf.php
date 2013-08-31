@@ -15,3 +15,9 @@ if (!defined('TYPO3_MODE')) {
 	array('Comment' => 'list,add,create'),
 	array('Comment' => 'list,add,create') // non-cacheable actions
 );
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin('TYPO3.' . $_EXTKEY,
+	'LatestDiscussions',
+	array('Discussion' => 'latest'),
+	array('Discussion' => 'latest') // non-cacheable actions
+);

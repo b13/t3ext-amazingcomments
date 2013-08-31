@@ -32,7 +32,16 @@ namespace TYPO3\Amazingcomments\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class DiscussionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class DiscussionController extends \TYPO3\Amazingcomments\Controller\AbstractController {
+
+	/**
+	 * lists the latest 5 discussions of all pages, from the start page
+	 *
+	 */
+	public function latestAction() {
+		$discussions = $this->discussionRepository->findLatest(5);
+		$this->view->assign('discussions', $discussions);
+	}
 
 	/**
 	 * action new

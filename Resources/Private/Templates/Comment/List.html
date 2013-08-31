@@ -6,7 +6,7 @@
 		</f:if>
 		
 		<f:for each="{discussion.comments}" as="comment" iteration="i">
-			<div class="commentItem {f:if(condition: i.isEven, then: 'even', else: 'odd')}">
+			<div class="commentItem {f:if(condition: i.isEven, then: 'even', else: 'odd')}" id="comment-{comment.uid}">
 				<div class="commentHeader">
 					<div class="imgWrap">
 						<f:image src="{comment.author.image}" alt="{comment.author.publicName}" width="50c" height="60c" />

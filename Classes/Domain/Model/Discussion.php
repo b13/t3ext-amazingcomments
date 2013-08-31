@@ -85,6 +85,20 @@ class Discussion extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->comments;
 	}
 
+
+	/**
+	 * Returns the last comment
+	 *
+	 * @return \TYPO3\Amazingcomments\Domain\Model\Comment $comment
+	 */
+	public function getLatestComment() {
+		$lastComment = NULL;
+		foreach ($this->comments as $comment) {
+			$lastComment = $comment;
+		}
+		return $lastComment;
+	}
+
 	/**
 	 * Sets the comments
 	 *

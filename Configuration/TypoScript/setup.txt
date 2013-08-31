@@ -20,6 +20,9 @@ plugin.tx_amazingcomments {
 		
 		#notificationmai Senderemail
 		notificationMailSenderEmail = info@theanalyticalscientist.com
+		
+		#list of uid to clear after a comment was added
+		pagesToClearCache = {$txp.pages.startPage},{$txp.pages.filterPage}
 	}
 }
 

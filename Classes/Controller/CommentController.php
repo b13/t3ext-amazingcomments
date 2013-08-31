@@ -79,9 +79,12 @@ class CommentController extends \TYPO3\Amazingcomments\Controller\AbstractContro
 		// only show the last 3 comments
 		// @todo: make this configurable
 		$latestComments = array_slice($latestComments, -3);
-
+		$latestCommentsCount = count($latestComments);
+		$commentsCount = count($discussion->getComments());
 		
 		$this->view->assign('latestComments', $latestComments);
+		$this->view->assign('latestCommentsCount', $latestCommentsCount);
+		$this->view->assign('commentsCount', $commentsCount);
 
 
 		if (!$newComment) {
@@ -174,6 +177,12 @@ class CommentController extends \TYPO3\Amazingcomments\Controller\AbstractContro
 				}
 			}
 		}
+		
+		// clear the cache on the startpage, the filter page, the current page and the parent page of the current page
+		$pagesToClear = $this->settings['pagesToClearCache'] . ',' . strval($GLOBALS['TSFE']->id) . ',' . $GLOBALS['TSFE']->page['pid'];
+		
+		$this->clearFrontendCache($pagesToClear);
+		
 		// make sure the redirect adds the query string
 		$uri = $this->uriBuilder->reset()->setCreateAbsoluteUri(TRUE)
 			->setAddQueryString(TRUE)
@@ -201,6 +210,17 @@ class CommentController extends \TYPO3\Amazingcomments\Controller\AbstractContro
 			$this->discussionRepository->add($defaultDiscussion);
 		}
 		return $defaultDiscussion;
+	}
+	
+	
+	/**
+	 * function to clear the caches for specific pages in TYPO3 (#AC-760)
+	 * Source: http://www.ausgebloggt.de/2011/03/19/typo3-4-5-clear-cache-in-frontend-extension/
+	 *
+	 *
+	 */
+	public function clearFrontendCache($pageIds) {
+		$GLOBALS['TSFE']->clearPageCacheContent_pidList($pageIds);
 	}
 
 }

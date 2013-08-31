@@ -33,9 +33,48 @@ namespace TYPO3\Amazingcomments\Domain\Repository;
  *
  */
 class DiscussionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+/*
 
 	protected $defaultOrderings = array(
 		'crdate' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
 	);
+*/
+	
+	/**
+	 * find latest discussions, used on the start page
+	 *
+	 * @param $limit limit to a certain amount
+	 */
+	public function findLatest($limit) {
+
+		// find the latest comments
+		$commentResults = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
+			'discussion',
+			'tx_amazingcomments_domain_model_comment',
+			'deleted=0',
+			'',
+			'crdate DESC',
+			'100'
+		);
+		foreach ($commentResults as $commentResult) {
+			$discussionUids['DISC' . $commentResult['discussion']] = $commentResult['discussion'];
+		}
+		
+		$discussionUids = array_slice($discussionUids, 0, 5);
+
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+		$query->setLimit($limit);
+		$query->matching($query->in('uid', $discussionUids));
+
+		// sort by the comments above
+		$discussions = $query->execute();
+		$finalDiscussions = array_flip($discussionUids);
+
+		foreach ($discussions as $discussion) {
+			$finalDiscussions[$discussion->getUid()] = $discussion;
+		}
+		return $finalDiscussions;
+	}
 
 }

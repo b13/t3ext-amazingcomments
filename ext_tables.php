@@ -12,6 +12,13 @@ if (!defined('TYPO3_MODE')) {
 	'ListComments', 'Amazing Comments: List comments'
 );
 
+// show the latest discussions
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin($_EXTKEY,
+	'LatestDiscussions', 'Amazing Comments: Show the latest discussions'
+);
+
+
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Amazing Comments and Forum');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_amazingcomments_domain_model_comment', 'EXT:amazingcomments/Resources/Private/Language/locallang_csh_tx_amazingcomments_domain_model_comment.xlf');

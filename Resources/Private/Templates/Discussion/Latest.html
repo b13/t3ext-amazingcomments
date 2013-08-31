@@ -1,0 +1,22 @@
+<div class="discussionWrap">
+	<div class="discussionLatest showLatestDiscussions">
+		<div class="discussionLatestInner">
+			<h1>Latest Comments</h1>
+			<f:for each="{discussions}" as="discussion" iteration="i">
+				<div class="commentItem {f:if(condition: i.isEven, then: 'even', else: 'odd')}">
+					<f:link.page pageUid="{discussion.pid}" class="layerLink discussionTeaserLink" additionalAttributes="{hash: 'comment-{discussion.latestComment.uid}'}" additionalParams="{tab: 'layerTab-discussion', hash: 'comment-{discussion.latestComment.uid}'}">
+						<div class="imgWrap">
+							<f:image src="{discussion.latestComment.author.image}" alt="{discussion.latestComment.author.publicName}" width="50c" height="60c" />
+						</div>
+						<div class="textWrap">
+							<h3>{discussion.headline}</h3>
+							<p class="teaserText js_textEllipsis"><f:format.raw><f:format.crop maxCharacters="350" append="...">{discussion.latestComment.content}</f:format.crop></f:format.raw><br />
+							<p class="userInfo">From: <b>{discussion.latestComment.author.publicName}</b> &#124; <f:format.date format="Y-m-d h:i a">{discussion.latestComment.crdate}</f:format.date></p>
+						</div>
+						<div class="clearfix"></div>
+					</f:link.page>
+				</div>
+			</f:for>
+		</div>
+	</div>
+</div>
