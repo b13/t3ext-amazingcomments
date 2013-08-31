@@ -16,10 +16,10 @@ plugin.tx_amazingcomments {
 		notificationMailSubject = New comment on
 		
 		#notificationmai Sendername
-		notificationMailSenderName = The Analytical Scientist
+		notificationMailSenderName = My Website
 		
 		#notificationmai Senderemail
-		notificationMailSenderEmail = info@theanalyticalscientist.com
+		notificationMailSenderEmail = me@example.com
 		
 		#list of uid to clear after a comment was added
 		pagesToClearCache = {$txp.pages.startPage},{$txp.pages.filterPage}
